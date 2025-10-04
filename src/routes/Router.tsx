@@ -69,7 +69,7 @@ const Router = () => {
       </Route> */}
 
       {/* Redirect root to login */}
-      <Route path="/" element={<Navigate to="/auth/login" replace />} />
+      <Route path="/" element={<Navigate to="/#/auth/login" replace />} />
 
       {/* Catch-all fallback */}
       <Route path="*" element={<NotFoundPage />} />
