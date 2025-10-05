@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:3000/api/V1", // ✅ Your news project base URL
+  baseURL: (import.meta.env.VITE_API_BASE_URL as string) || "http://localhost:3000/api/V1",
   headers: {
     "Content-Type": "application/json",
   },
