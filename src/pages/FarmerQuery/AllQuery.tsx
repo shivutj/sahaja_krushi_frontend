@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import axiosClient from '../../lib/network/axiosClient';
 import DynamicTable from '../../components/DynamicTable';
+import { Link } from 'react-router-dom';
 
 type QueryItem = {
   id: number;
@@ -189,12 +190,12 @@ const AllQuery: React.FC = () => {
       label: 'Actions',
       render: (_: any, record: QueryItem) => (
         <div className="space-x-2">
-          <a
-            href={`/admin/farmer-query/${record.id}`}
+          <Link
+            to={`/admin/farmer-query/${record.id}`}
             className="px-3 py-1 bg-gray-700 text-white rounded text-xs hover:bg-gray-800"
           >
             View
-          </a>
+          </Link>
           <button
             onClick={() => startAnswer(record)}
             className="px-3 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700"
