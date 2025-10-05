@@ -538,7 +538,7 @@ const NewsPage: React.FC = () => {
 
                       {item.documentUrl && (
                         <a
-                          href={`http://localhost:3000${item.documentUrl}`}
+                          href={`${import.meta.env.VITE_API_BASE_URL?.replace('/api/V1', '') || 'https://sahaja-krushi-backend-h0t1.onrender.com'}${item.documentUrl}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium"

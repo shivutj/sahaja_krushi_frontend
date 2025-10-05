@@ -37,15 +37,13 @@ const QueryDetail: React.FC = () => {
   const [saving, setSaving] = useState(false);
 
   const uploadsBase = useMemo(() => {
-    // Derive backend origin from axiosClient baseURL
     try {
-      const base = (axiosClient.defaults as any).baseURL as string | undefined;
-      if (base) {
-        const u = new URL(base);
-        return `${u.protocol}//${u.hostname}:${u.port || '3000'}/uploads`;
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL as string;
+      if (apiBaseUrl) {
+        return apiBaseUrl.replace('/api/V1', '') + '/uploads';
       }
     } catch {}
-    return 'http://localhost:3000/uploads';
+    return 'https://sahaja-krushi-backend-h0t1.onrender.com/uploads';
   }, []);
 
   const imageUrl = item?.imagePath ? `${uploadsBase}/${item.imagePath}` : null;
