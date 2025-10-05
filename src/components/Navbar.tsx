@@ -91,13 +91,13 @@ const loginResponse = {
 const SimpleGovernmentNavbar: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showFarmersDropdown, setShowFarmersDropdown] = useState(false);
-  const [showFormerDropdown, setShowFormerDropdown] = useState(false);
+  const [showFarmerDropdown, setShowFarmerDropdown] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<"en" | "kn">("en");
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const farmersRef = useRef<HTMLDivElement | null>(null);
-  const formerRef = useRef<HTMLDivElement | null>(null);
+  const farmerRef = useRef<HTMLDivElement | null>(null);
   const userRef = useRef<HTMLDivElement | null>(null);
 
   const navigate = useNavigate();
@@ -153,11 +153,11 @@ const SimpleGovernmentNavbar: React.FC = () => {
       accountStatus: "Account Status",
       portalName: "Sahaja Krushi Portal",
       portalSubtitle: "Karnataka Government",
-      formerQuery: "Former Query",
+      farmerQuery: "Farmer Query",
       pendingQuery: "Pending Query",
       solvedQuery: "Solved Query",
       RejectedQuery: "Rejected Query",
-      formerReport: "Former Report",
+      farmerReport: "Farmer Report",
     },
     kn: {
       govKarnataka: "ಕರ್ನಾಟಕ ಸರ್ಕಾರ",
@@ -193,11 +193,11 @@ const SimpleGovernmentNavbar: React.FC = () => {
       accountStatus: "ಖಾತೆ ಸ್ಥಿತಿ",
       portalName: "ಸಹಜ ಕೃಷಿ ಪೋರ್ಟಲ್",
       portalSubtitle: "ಕರ್ನಾಟಕ ಸರ್ಕಾರ",
-      formerQuery: "ಹಳೆಯ ಪ್ರಶ್ನೆಗಳು",
+      farmerQuery: "ರೈತರ ಪ್ರಶ್ನೆಗಳು",
       pendingQuery: "ಬಾಕಿಯಿರುವ ಪ್ರಶ್ನೆಗಳು",
       solvedQuery: "ಪರಿಹರಿಸಿದ ಪ್ರಶ್ನೆಗಳು",
       RejectedQuery: "ತಿರಸ್ಕೃತ ಪ್ರಶ್ನೆಗಳು",
-      formerReport: "ಹಳೆಯ ವರದಿಗಳು",
+      farmerReport: "ರೈತರ ವರದಿಗಳು",
     },
   };
 
@@ -235,8 +235,8 @@ const SimpleGovernmentNavbar: React.FC = () => {
       if (userRef.current && !userRef.current.contains(event.target as Node)) {
         setShowUserMenu(false);
       }
-      if (formerRef.current && !formerRef.current.contains(event.target as Node)) {
-        setShowFormerDropdown(false);
+      if (farmerRef.current && !farmerRef.current.contains(event.target as Node)) {
+        setShowFarmerDropdown(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -402,28 +402,28 @@ const SimpleGovernmentNavbar: React.FC = () => {
               )}
             </div>
 
-            {/* Former Query dropdown with Former Report inside */}
-            <div className="relative" ref={formerRef}>
+            {/* Farmer Query dropdown with Farmer Report inside */}
+            <div className="relative" ref={farmerRef}>
               <button
                 type="button"
-                onClick={() => setShowFormerDropdown(!showFormerDropdown)}
+                onClick={() => setShowFarmerDropdown(!showFarmerDropdown)}
                 className="flex items-center space-x-2 text-white hover:text-green-200 font-medium px-3 py-2 rounded-lg hover:bg-green-700/50 transition-all duration-200"
               >
                 <BookOpen className="h-4 w-4" />
-                <span>{t.formerQuery}</span>
+                <span>{t.farmerQuery}</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-transform duration-300 ${
-                    showFormerDropdown ? "rotate-180" : ""
+                    showFarmerDropdown ? "rotate-180" : ""
                   }`}
                 />
               </button>
-              {showFormerDropdown && (
+              {showFarmerDropdown && (
                 <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-green-200 py-2 z-50 animate-in slide-in-from-top-2 duration-200">
-                  <DropdownItem icon={BookOpen} href="/admin/former-query/all" onClick={() => setShowFormerDropdown(false)}>
-                    {t.formerQuery}
+                  <DropdownItem icon={BookOpen} href="/admin/farmer-query/all" onClick={() => setShowFarmerDropdown(false)}>
+                    {t.farmerQuery}
                   </DropdownItem>
-                  <DropdownItem icon={Wheat} href="/admin/former-report/all" onClick={() => setShowFormerDropdown(false)}>
-                    {t.formerReport}
+                  <DropdownItem icon={Wheat} href="/admin/farmer-report/all" onClick={() => setShowFarmerDropdown(false)}>
+                    {t.farmerReport}
                   </DropdownItem>
                 </div>
               )}
@@ -603,23 +603,23 @@ const SimpleGovernmentNavbar: React.FC = () => {
               <div className="border-t border-green-200 pt-2 mt-2">
                 <button
                   onClick={() => {
-                    navigate("/admin/former-query/all");
+                    navigate("/admin/farmer-query/all");
                     setShowMobileMenu(false);
                   }}
                   className="flex items-center space-x-3 px-6 py-2 rounded-lg transition-all text-green-600 hover:bg-green-100 hover:text-green-900 w-full text-left"
                 >
                   <BookOpen className="h-4 w-4" />
-                  <span className="text-sm">{t.formerQuery}</span>
+                  <span className="text-sm">{t.farmerQuery}</span>
                 </button>
                 <button
                   onClick={() => {
-                    navigate("/admin/former-report/all");
+                    navigate("/admin/farmer-report/all");
                     setShowMobileMenu(false);
                   }}
                   className="mt-2 flex items-center space-x-3 px-6 py-2 rounded-lg transition-all text-green-600 hover:bg-green-100 hover:text-green-900 w-full text-left"
                 >
                   <Wheat className="h-4 w-4" />
-                  <span className="text-sm">{t.formerReport}</span>
+                  <span className="text-sm">{t.farmerReport}</span>
                 </button>
               </div>
             </div>

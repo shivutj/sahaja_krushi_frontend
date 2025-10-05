@@ -290,7 +290,7 @@ const AdminHomePage = () => {
                 </li>
                 <li>
                   <button
-                    onClick={() => navigate('/admin/former-query/all')}
+                    onClick={() => navigate('/admin/farmer-query/all')}
                     className="hover:text-white transition-colors text-left"
                   >
                     Farmer Queries
@@ -298,10 +298,10 @@ const AdminHomePage = () => {
                 </li>
                 <li>
                   <button
-                    onClick={() => navigate('/admin/former-report/all')}
+                    onClick={() => navigate('/admin/farmer-report/all')}
                     className="hover:text-white transition-colors text-left"
                   >
-                    Former Crop Reports
+                    Farmer Crop Reports
                   </button>
                 </li>
                 <li>

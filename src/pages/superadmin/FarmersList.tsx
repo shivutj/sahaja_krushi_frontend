@@ -118,8 +118,8 @@ const FarmersList: React.FC = () => {
                   <Users className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-800">Formers Management</h1>
-                  <p className="text-gray-600">Manage Formers accounts </p>
+                  <h1 className="text-2xl font-bold text-gray-800">Farmers Management</h1>
+                  <p className="text-gray-600">Manage Farmers accounts </p>
                 </div>
               </div>
       <div className="mb-4 flex items-center justify-between">

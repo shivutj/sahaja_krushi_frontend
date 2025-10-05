@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import AdminDashboardNavbar from "../../components/Navbar";
 
-const FormerMainLayout = () => {
+const FarmerMainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <AdminDashboardNavbar/>
@@ -12,4 +12,4 @@ const FormerMainLayout = () => {
   );
 };
 
-export default FormerMainLayout;
+export default FarmerMainLayout;

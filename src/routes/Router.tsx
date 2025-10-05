@@ -5,9 +5,9 @@ import NotFoundPage from '../pages/notfound/NotFoundPage';
 import AdminMainLayout from '../layout/admin/AdminMainLayout';
 import SuperAdminMainLayout from '../layout/superadmin/SuperAdminMainLayout';
 import HomePage from '../pages/home/HomePage';
-import FormerRegister from '../pages/Former Register/FormerRegister';
+import FarmerRegister from '../pages/Farmer Register/FarmerRegister';
 import AnalyticsPage from '../pages/home/Analytics';
-import FarmerManagementPage from '../pages/Former Register/FarmerManagement';
+import FarmerManagementPage from '../pages/Farmer Register/FarmerManagement';
 import CropManagementPage from '../pages/home/CropManagement';
 import AboutPage from '../pages/home/News';
 import AdminManagement from '../pages/superadmin/AdminManagement';
@@ -17,10 +17,10 @@ import FarmersList from '../pages/superadmin/FarmersList';
 import FarmerDetail from '../pages/superadmin/FarmerDetail';
 import SuperAdminEscalatedQueries from '../pages/superadmin/SuperAdminEscalatedQueries';
 import EscalatedQueryDetail from '../pages/superadmin/EscalatedQueryDetail';
-import AllQuery from '../pages/FormerQuery/AllQuery';
-import QueryDetail from '../pages/FormerQuery/QueryDetail';
-import AllReports from '../pages/FormerReport/AllReports';
-import ReportDetail from '../pages/FormerReport/ReportDetail';
+import AllQuery from '../pages/FarmerQuery/AllQuery';
+import QueryDetail from '../pages/FarmerQuery/QueryDetail';
+import AllReports from '../pages/FarmerReport/AllReports';
+import ReportDetail from '../pages/FarmerReport/ReportDetail';
 
 const Router = () => {
   return (
@@ -40,11 +40,11 @@ const Router = () => {
         <Route path="farmer-management" element={<FarmerManagementPage />} />
         <Route path="crop-management" element={<CropManagementPage />} />
         <Route path="home" element={<HomePage />} />
-        <Route path="register" element={<FormerRegister />} />
-        <Route path="former-query/all" element={<AllQuery />} />
-        <Route path="former-query/:id" element={<QueryDetail />} />
-        <Route path="former-report/all" element={<AllReports />} />
-        <Route path="former-report/:id" element={<ReportDetail />} />
+        <Route path="register" element={<FarmerRegister />} />
+        <Route path="farmer-query/all" element={<AllQuery />} />
+        <Route path="farmer-query/:id" element={<QueryDetail />} />
+        <Route path="farmer-report/all" element={<AllReports />} />
+        <Route path="farmer-report/:id" element={<ReportDetail />} />
       </Route>
 
      <Route path="/superadmin" element={<SuperAdminMainLayout />}>
@@ -58,12 +58,12 @@ const Router = () => {
         <Route path="about" element={<AboutPage />} />
         <Route path="farmer-management" element={<FarmerManagementPage />} />
         <Route path="crop-management" element={<CropManagementPage />} />
-        <Route path="register" element={<FormerRegister />} />
+        <Route path="register" element={<FarmerRegister />} />
         <Route path="escalated-queries" element={<SuperAdminEscalatedQueries />} />
         <Route path="escalated-queries/:id" element={<EscalatedQueryDetail />} />
       </Route>
 
-     {/* <Route path="/former" element={<FormerMainLayout />}>
+     {/* <Route path="/farmer" element={<FarmerMainLayout />}>
         <Route index element={<Navigate to="home" replace />} />
         <Route path="home" element={<HomePage />} />
       </Route> */}
